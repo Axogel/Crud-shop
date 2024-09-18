@@ -37,6 +37,10 @@ class User extends Authenticatable
      *
      * @return array<string, string>
      */
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
     protected function casts(): array
     {
         return [

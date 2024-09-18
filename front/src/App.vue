@@ -1,30 +1,41 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div id="app">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">MyApp</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <router-link class="nav-link" to="/">Order List</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/products">Product List</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/users">User List</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/buyers">Buyers List</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/create-order">Create Order</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/create-product">Create Product</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/create-user">Create User</router-link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container mt-4">
+      <router-view></router-view>
+    </div>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<script>
+export default {
+  name: 'App',
+};
+</script>
